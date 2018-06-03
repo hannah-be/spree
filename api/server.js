@@ -7,7 +7,7 @@ const server = express();
 server.use(bodyParser.json());
 
 // Routes
-server.use("/", [require("./routes/posts")]);
+server.use([require("./routes/posts")]);
 
 // Start the server
 server.listen(7000, error => {

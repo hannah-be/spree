@@ -5,9 +5,7 @@ mongoose.Promise = global.Promise;
 
 // Connect to our local database
 mongoose
-  .connect("mongodb://localhost/spree", {
-    useMongoClient: true
-  })
+  .connect("mongodb://localhost/spree")
   .then(() => {
     console.log("Successfully connect to database");
   })

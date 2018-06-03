@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const authMiddleWare = require("./middleware/auth");
 
 const server = express();
 
 // Middleware Plugins
 server.use(bodyParser.json());
+server.use(authMiddleWare.initialize); // Kick passport off
 
 // Routes
 // server.use([require("./routes/posts")]);

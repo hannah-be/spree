@@ -3,9 +3,10 @@ const JWT = require("jsonwebtoken");
 const PassportJwt = require("passport-jwt");
 const User = require("../models/User");
 
-const jwtSecret = ".]y#rg9C43evhEsy";
+require("dotenv").config({ path: "./.env" });
 const jwtAlgorithm = "HS256";
 const jwtExpiresIn = "7 days";
+const jwtSecret = process.env.jwtSecret;
 
 passport.use(User.createStrategy());
 

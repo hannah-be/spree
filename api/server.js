@@ -7,7 +7,8 @@ const server = express();
 server.use(bodyParser.json());
 
 // Routes
-server.use([require("./routes/posts")]);
+// server.use([require("./routes/posts")]);
+server.use("/", [require("./routes/posts"), require("./routes/auth")]);
 
 // Start the server
 server.listen(7000, error => {

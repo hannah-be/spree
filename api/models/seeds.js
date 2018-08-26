@@ -3,13 +3,13 @@ const Post = require("./Post");
 Post.create([
   {
     title: "First post",
-    text: "This is my first blog post",
+    text: "This is my first post",
     date: new Date(),
     tags: ["hello"]
   },
   {
     title: "Second post",
-    text: "This is my second blog post",
+    text: "This is my second post",
     date: new Date(),
     tags: ["hello", "tech"]
   }

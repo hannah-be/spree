@@ -11,12 +11,13 @@ const jwtSecret = process.env.jwtSecret;
 passport.use(User.createStrategy());
 
 function register(req, res, next) {
-  // Create a fresh user model
+  // Create a fresh user model using the submitted data
   const user = new User({
     email: req.body.email,
     firstName: req.body.firstName
   });
   // Create the user with the specified password
+  // .register method made available from the passportLocalMongoose plugin
   User.register(user, req.body.password, (error, user) => {
     if (error) {
       // Our register middleware failed
@@ -88,7 +89,7 @@ function signJWTForUser(req, res) {
 module.exports = {
   initialize: passport.initialize(),
   register,
-  signIn: passport.authenticate("local", { session: false }),
+  signIn: passport.authenticate("local", { session: true }),
   requireJWT: passport.authenticate("jwt", { session: false }),
   signJWTForUser
 };

@@ -23,6 +23,11 @@ router.post(
   /* middleware that handles the sign in */
   authMiddleware.signIn,
   /* json handler */
+  // (req, res) => {
+  //   res.json({
+  //     user: req.user
+  //   })
+  // }
   authMiddleware.signJWTForUser
 );
 

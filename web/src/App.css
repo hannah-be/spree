@@ -1,3 +1,21 @@
 .App {
   text-align: center;
+  font-family: 'Libre Baskerville', serif;
+}
+
+Header {
+  height: 50%;
+  width: 100%;
+  text-align: left;
+  margin: 8rem 0.5rem 0;
+  font-weight: 400;
+}
+
+Header, p {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+#head-text {
+  width: 50%;
 }
